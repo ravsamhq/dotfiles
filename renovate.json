@@ -1,10 +1,16 @@
 {
-  "extends": ["config:base"],
-  "stabilityDays": 3,
-  "packageRules": [
-    {
-      "updateTypes": ["minor", "patch"]
-    }
-  ],
-  "schedule": ["every weekend"]
+	"extends": ["config:base"],
+	"labels": ["dependencies"],
+	"major": {
+		"enabled": false
+	},
+	"packageRules": [
+		{
+			"matchUpdateTypes": ["patch", "pin", "digest"],
+			"automerge": true
+		}
+	],
+	"prCreation": "not-pending",
+	"schedule": ["every weekend"],
+	"stabilityDays": 3
 }

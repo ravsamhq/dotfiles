@@ -1,16 +1,23 @@
 {
-	"extends": ["config:base"],
-	"labels": ["dependencies"],
+	"extends": ["config:base", "group:monorepos"],
+  "automergeType": "branch",
 	"major": {
 		"enabled": false
 	},
 	"packageRules": [
 		{
 			"matchUpdateTypes": ["patch", "pin", "digest"],
-			"automerge": true
-		}
+			"automerge": true,
+      "labels": ["dependencies"]
+		},
+    {
+      "depTypeList": ["devDependencies"],
+      "schedule": ["before 9am on the first day of the month"],
+      "labels": ["dev-dependencies"]
+    }
 	],
 	"prCreation": "not-pending",
-	"schedule": ["every weekend"],
-	"stabilityDays": 3
+	"schedule": ["before 9am every weekend"],
+	"stabilityDays": 3,
+  "timezone": "Asia/Kolkata"
 }

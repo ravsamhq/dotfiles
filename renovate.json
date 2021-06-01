@@ -13,6 +13,8 @@
     {
       "depTypeList": ["devDependencies"],
       "schedule": ["before 9am on the first day of the month"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+			"automerge": true,
       "labels": ["dev-dependencies"]
     }
 	],
